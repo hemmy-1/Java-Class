@@ -1,5 +1,3 @@
-
-
 import java.util.Scanner;
 
 public class Main {
@@ -15,16 +13,16 @@ public class Main {
             // getting the name
             System.out.println("Enter the name of Student " + (i+1));
             String name = input.nextLine();
-            stArray[i].setName(name);
+            stArray[i].setName(name);   
 
             //gettting the age
             System.out.println("Enter the age of Student " + (i+1));
-            int age = input.nextInt();
+            int age = Integer.parseInt(input.nextLine());
             stArray[i].setAge(age);
 
             //getting the score
             System.out.println("Enter the score of Student " + (i+1));
-            int score = input.nextInt();
+            int score = Integer.parseInt(input.nextLine());
             stArray[i].setScore(score);
         }
 
@@ -35,6 +33,8 @@ public class Main {
             System.out.println();
             System.out.println("------");
         }
+
+        input.close();
     }
     
 }
