@@ -1,45 +1,45 @@
 
-interface PaymentGateway{
-    String name();
-}
-class Paypal implements PaymentGateway {
-    @Override
-    public String name(){
-        return "Paypal Gateway";
+abstract class PaymentGateway{
+     abstract String makePayment();
+    abstract String withdraw();
+
+    String details(){
+        return "This is all you need to know about me";
     }
 }
 
-class PayStack implements PaymentGateway{
-    @Override
-    public String name(){
-        return "PayStack Gateway";
+
+class Paypal extends PaymentGateway {
+    
+
+    public String makePayment(){
+        return "Making payment with paypal";
     }
-}
 
-class Flutterwave implements PaymentGateway{
-    @Override
-    public String name(){
-        return "Flutterwave Gateway";
-    }
-}
-
-class Payment {
-
-    void makePayment(PaymentGateway p){
-        System.out.println("I am making payment through " + p.name());
+    public String withdraw(){
+        return "withdrawing throuhg paypal";
     }
     
 }
 
+class PayStack extends PaymentGateway{
+    public String makePayment(){
+        return "Making payment with paystack";
+    }
+    
+    public String withdraw(){
+        return "withdrawing throuhg paystack";
+    }
+}
+
+
 public class Index{
     public static void main(String[] args){
-        Payment py = new Payment();
         Paypal pp = new Paypal();
-        Flutterwave ff =  new Flutterwave();
         PayStack ps = new PayStack();
-        py.makePayment(pp);
-        py.makePayment(ff);
-        py.makePayment(ps);
+
+        System.out.println(pp.makePayment());
+        System.out.println(ps.makePayment());
     }
 }
 
