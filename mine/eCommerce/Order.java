@@ -1,6 +1,5 @@
-package mine.eCommerce;
 
-public abstract class Order {
+public class Order {
     private Customer customer;
     private Product product;
 
@@ -27,6 +26,21 @@ public abstract class Order {
 
     
     public void displayOrder(){
-        System.out.println("Customer Name" + get);
+        System.out.println("Customer Name:   " + customer.getCustomerName());
+        System.out.println("Item:  " + product.getProductName());
+        System.out.println("Product:  " + product.getPrice());
+
+        if (product instanceof Discountable) {
+            Discountable discountableProduct = (Discountable) product;
+            System.out.println("Discounted Price: " + "\u20A6" + discountableProduct.applyDiscount());
+        } else {
+            System.out.println("Discounted Price: N/A (No discount available)");
+        }
+        System.out.println ("--------------");
+    
+
     }
+
+
+
 }

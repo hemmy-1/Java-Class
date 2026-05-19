@@ -1,9 +1,8 @@
-package mine.eCommerce;
 
-abstract class Clothing extends Product implements Discountable {
+public class Clothing extends Product implements Discountable {
     private String size;
 
-    public Clothing(int productId, String productName, double price, int warrantyMonths, String size) {
+    public Clothing(int productId, String productName, double price, String size) {
 
         super(productId, productName, price);
         this.size = size;

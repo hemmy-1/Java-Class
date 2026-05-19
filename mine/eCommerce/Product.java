@@ -1,4 +1,3 @@
-package mine.eCommerce;
 
 public abstract class Product {
     private int productId;
