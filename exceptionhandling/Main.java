@@ -1,36 +1,34 @@
+import java.io.IOError;
+import java.io.IOException;
+import java.lang.Exception;
 
+class Test{
+
+    int divide(int a, int b) throws IOException{
+        return a/b;
+    }
+}
 public class Main {
 
     public static void main(String args[]){
+        int a = 5;
+        int b = -1;
 
-        int a= 5;
-        int b = args.length; 
-
-        int c = -7;
-
-        Calc ca = new Calc();
-        
-        System.out.println(ca.divide(5, 0));
-
+        Test t = new Test();
+        try{
+        t.divide(8, 0);
+        }
+        catch(IOException e){
+            
+        }
         // try{
-        //     if (c < 0){
-        //         throw new RuntimeException("You cannot input negative numbers");
+        //     if (b<0){
+        //         throw new RuntimeException("Your denominator cannot be negative");
         //     }
-        //     System.out.println(a/b);
-        // }
-        // catch(ArithmeticException e){
-        //     System.out.println("The error has been caught");
-        // }
-        // catch(RuntimeException e){
-        //     System.out.println("This error occured: " + e);
+        // System.out.println(a/b);
         // }
         // finally{
-
-        //     System.out.println("Succesful"); 
+        //     System.out.println("This will work anytime");
         // }
-
-        // System.out.println("This is still working");
-        
-        
-        
+        System.out.println("I am still working");
     }}
