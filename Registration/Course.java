@@ -1,41 +1,38 @@
 package Registration;
 
-public class AddCourse {
+public class Course {
     private String courseCode;
     private String courseTitle;
     private int courseUnit;
+    private int id;
     
-    public AddCourse(String courseCode, String courseTitle, int courseUnit) {
+    public Course(int id, String courseCode, String courseTitle, int courseUnit) {
         this.courseCode = courseCode;
         this.courseTitle = courseTitle;
         this.courseUnit = courseUnit;
+        this.id = id;
     }
 
     public String getCourseCode() {
         return courseCode;
     }
 
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-    }
-
     public String getCourseTitle() {
         return courseTitle;
-    }
-
-    public void setCourseTitle(String courseTitle) {
-        this.courseTitle = courseTitle;
     }
 
     public int getCourseUnit() {
         return courseUnit;
     }
 
-    public void setCourseUnit(int courseUnit) {
-        this.courseUnit = courseUnit;
+    public int getId() {
+        return id;
     }
 
-    public String tString(){
+
+
+    @Override
+    public String toString(){
         return "AddCourse [code= "+ this.courseCode +", title= "+ this.courseTitle +", unit= "+ this.courseUnit +"]";
     }
 }

@@ -15,6 +15,7 @@ Each course should have:
 Course Code
 Course Title
 Course Unit
+course id
 3. Register Course for Student
 The system should:
 Register a student for a course

@@ -1,14 +1,19 @@
 package Registration;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Student {
     private String name;
     private int studentId;
     private String depaartment;
+    private Set<Course> registerCourses;
 
-    public Student(String name, int studentId, String department){
+
+    public Student(String name, int studentId, String depaartment, Set<Course> registerCourses) {
         this.name = name;
         this.studentId = studentId;
-        this.depaartment = department;
+        this.depaartment = depaartment;
+        this.registerCourses = new HashSet<>();
     }
 
     public String getName() {
@@ -35,7 +40,23 @@ public class Student {
         this.depaartment = depaartment;
     }
 
-    public String toString(){
-        return "Student [name=" + this.name + ", id= " + this.studentId +", department= "+ this.depaartment +" ]";
+
+    public void registerCourse(Course course) throws Exception{
+        if (course == null) {
+            throw new IllegalAccessException("Course can not be empty");
+        }
+
+        if (!registerCourses.add(course)){
+            throw new Exception("Duplicate registration error")
+        }
     }
+
+
+
+    @Override
+    public String toString(){
+        return "name=" + this.name + ", id= " + this.studentId +", department= "+ this.depaartment ;
+    }
+
+
 }
