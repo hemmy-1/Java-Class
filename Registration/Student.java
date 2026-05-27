@@ -39,24 +39,26 @@ public class Student {
     public void setDepaartment(String depaartment) {
         this.depaartment = depaartment;
     }
+    
+    public Set<Course> getRegisterCourses() {
+        return registerCourses;
+    }
 
 
     public void registerCourse(Course course) throws Exception{
-        if (course == null) {
-            throw new IllegalAccessException("Course can not be empty");
+        if (registerCourses.contains(course)) {
+            throw new Exception("Error: Student is already registered for " + course.getCourseCode());
         }
+        registerCourses.add(course);
 
-        if (!registerCourses.add(course)){
-            throw new Exception("Duplicate registration error")
-        }
+    
     }
 
 
 
     @Override
     public String toString(){
-        return "name=" + this.name + ", id= " + this.studentId +", department= "+ this.depaartment ;
+        return String.format("ID: %s | Name: %s | Dept: %s", studentId, name, depaartment);
     }
-
 
 }

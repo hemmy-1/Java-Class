@@ -1,13 +1,14 @@
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
+Serializable
 public class Students {
 
     List<Student> studList = new ArrayList<Student>();
     Scanner input = new Scanner(System.in);
-
     public void addStudent(){
         System.out.println("Enter the Id for the student: ");
         int id = Integer.parseInt(input.nextLine());

@@ -4,13 +4,11 @@ public class Course {
     private String courseCode;
     private String courseTitle;
     private int courseUnit;
-    private int id;
     
-    public Course(int id, String courseCode, String courseTitle, int courseUnit) {
+    public Course( String courseCode, String courseTitle, int courseUnit) {
         this.courseCode = courseCode;
         this.courseTitle = courseTitle;
         this.courseUnit = courseUnit;
-        this.id = id;
     }
 
     public String getCourseCode() {
@@ -25,14 +23,12 @@ public class Course {
         return courseUnit;
     }
 
-    public int getId() {
-        return id;
-    }
+   
 
 
 
     @Override
     public String toString(){
-        return "AddCourse [code= "+ this.courseCode +", title= "+ this.courseTitle +", unit= "+ this.courseUnit +"]";
+        return "code= " + this.courseCode + ", title= "+ this.courseTitle +", unit= "+ this.courseUnit ;
     }
 }
