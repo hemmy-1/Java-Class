@@ -1,4 +1,4 @@
-package Registration;
+
 
 public class Course {
     private String courseCode;

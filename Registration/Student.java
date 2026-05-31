@@ -1,15 +1,16 @@
-package Registration;
+
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Student {
+public class Student implements Serializable{
     private String name;
     private int studentId;
     private String depaartment;
     private Set<Course> registerCourses;
 
 
-    public Student(String name, int studentId, String depaartment, Set<Course> registerCourses) {
+    public Student(int studentId, String name, String depaartment) {
         this.name = name;
         this.studentId = studentId;
         this.depaartment = depaartment;

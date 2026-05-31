@@ -6,6 +6,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Students stud = new Students();
 
+        stud.loadStudent();
+
         while (true) {
             
             System.out.println("--- Student Portal ---");
